@@ -8,7 +8,7 @@ container.parentNode.insertBefore(clearButton, container.parentNode.childNodes[0
 
 clearButton.addEventListener('click', resetBoard);
 clearButton.addEventListener('mouseover', () => {
-    clearButton.style.backgroundColor = random_rgba();
+    clearButton.style.backgroundColor = random_rgb();
 })
 clearButton.addEventListener('mouseleave', () => {
     clearButton.style.backgroundColor = 'white';
@@ -25,7 +25,7 @@ function createBoard(size) {
         newDiv.style.backgroundColor = 'white';
         newDiv.addEventListener('mouseover', () => {
             //newDiv.style.backgroundColor = 'black'; //default
-            newDiv.style.backgroundColor = random_rgba(); //random color
+            newDiv.style.backgroundColor = random_rgb(); //random color
         });
         container.appendChild(newDiv);
     }
@@ -56,11 +56,11 @@ function clearBoard(gridSquares) {
     gridSquares.forEach(gridSquare => gridSquare.remove());
 }
 
-function random_rgba() {
+function random_rgb() {
     let o = Math.round;
     let r = Math.random;
-    let s = 255;
-    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+    const s = 255;
+    return `rgb(${o(r()*s)}, ${o(r()*s)}, ${o(r()*s)})`;
 }
 
 function reduceLightness(currentLightness) {
