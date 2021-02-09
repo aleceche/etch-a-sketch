@@ -22,10 +22,10 @@ function setDefaultBoard() {
 function resetBoard() {
     const VIEWPORTWIDTH = VIEWPORTHEIGHT = 800;
     gridSquares = Array.from(document.querySelectorAll('.grid-square'));
-    // need to write a function to clear the board
+    clearBoard(gridSquares);
     do {
         squaresPerSide = prompt('How many squares per side should the new grid contain');
-    } while (squaresPerSide > 100)
+    } while (squaresPerSide > 100);
     let gridWidth = gridHeight = VIEWPORTWIDTH/squaresPerSide;
     container.style.cssText = `grid-template-columns: repeat(${squaresPerSide}, ${gridWidth}px); grid-template-rows: repeat(${squaresPerSide}, ${gridHeight}px)`;
     for (let i = 0; i < squaresPerSide; i++) {
@@ -39,6 +39,10 @@ function resetBoard() {
     gridSquares.forEach(gridSquare => gridSquare.addEventListener('mouseover', () => {
         gridSquare.style.backgroundColor = 'blue';
     }));
+}
+
+function clearBoard(gridSquares) {
+    gridSquares.forEach(gridSquare => gridSquare.remove());
 }
 
 setDefaultBoard();
