@@ -1,5 +1,49 @@
+body {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white
+}
+
+h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 64px;
+    margin-top: 30px;
+}
+
 .container {
     display: grid;
-    width: 800px;
-    height: 800px;
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+}
+
+.grid-square {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+}
+
+.clearButton {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 35px;
+    width: 150px;
+    font-size: 20px;
+    border-radius: 10px;
+    outline: none;
+}
+
+.clearButton:hover {
+    height: 45px;
+    width: 170px;
+    font-size: 24px;
+    color: white;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.2);
+    outline: none;
 }
